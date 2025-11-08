@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorFlipper</title>
+    <link rel="stylesheet" href="public\assets\css\static6.css">
+
+</head>
+
+<body>
+    <div class="colorflip" id="colorchanging">
+        <button onclick="mybutton()" id="colorcheck">Click me to change color : <span id="colorchange">#ffffff</span></button>
+    </div>
+    <script>
+        const hexDigits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+        let colorflipping = document.getElementById("colorchange");
+
+        function value() {
+            let mathrandom = Math.random()
+            let mathwhole = Math.round(mathrandom * 15)
+            return hexDigits[mathwhole]
+        }
+        function mybutton() {
+            let hexcolor = "#"
+            for (let x = 0; x <6; x++) {
+                hexcolor += value()
+            }
+            let colorch = document.getElementById("colorchanging")
+            colorch.style.backgroundColor = hexcolor
+            colorflipping.innerHTML = hexcolor
+            console.log(hexcolor)
+        }
+    </script>
+</body>
+
+</html>
